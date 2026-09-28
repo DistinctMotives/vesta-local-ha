@@ -23,6 +23,8 @@ This integration is inspired by [koying's smarthomesec_ha](https://github.com/ko
 
 ## 📦 Installation
 
+> **Fork note**: This is a fork of [mphel44/vesta-local-ha](https://github.com/mphel44/vesta-local-ha) that carries fixes still pending upstream (idle devices report `off` instead of `unknown`, and per-device condition/tamper binary sensors). To use it, add `https://github.com/DistinctMotives/vesta-local-ha` as the custom repository in step 4 below. If the upstream repository is already added in HACS, remove it first since both provide the same `vesta_local` integration.
+
 ### HACS (Recommended)
 
 1. Open HACS in Home Assistant
