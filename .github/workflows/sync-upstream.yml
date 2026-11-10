@@ -1,0 +1,19 @@
+name: Sync fork with upstream
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.repository != 'mphel44/vesta-local-ha'
+    steps:
+      - name: Sync main with mphel44/vesta-local-ha
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh repo sync ${{ github.repository }} --source mphel44/vesta-local-ha --branch main
